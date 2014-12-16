@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery - Effects</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script>
+			function imgMouseEnter(e) {
+				//$("img").not(this).hide();
+				//$("img").not(this).fadeOut();
+				$("img").not(this).fadeTo("slow", 0);
+			}
+			function imgMouseOut(e) {
+				//$("img").not(this).show();
+				//$("img").not(this).fadeIn();
+				$("img").not(this).fadeTo("slow", 1);
+			}
+
+			$(document).ready(function() { 
+				$("img").mouseenter(imgMouseEnter)
+					.mouseout(imgMouseOut);
+				$(":submit").click(function(e) { 
+					e.preventDefault();
+
+					//$("img").toggle(); 
+					//$("img").toggle("slow");
+					//$("img").toggle("slow", "swing");
+					//$("img").toggle("fast", "linear");
+					//$("img").fadeToggle();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h1>jQuery - Effects</h1>
+		<h2>jQuery - Effects</h2>
+
+		<img src="http://geeklearn.com/courses/HTML5/images/html5.png"/>
+		<img src="http://geeklearn.com/courses/HTML5/images/css3.png"/>
+		<br><br><br>
+
+		<form action="http://www.google.com" method="get">
+			Name: <input type="text" id="name"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>

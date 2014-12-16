@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery - Event Shorthand Methods</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script>
+			function imgHandleMouse(e) {
+				if (event.type == "mouseout") {
+					$(this).css("opacity", "1");
+				}
+				else {
+					$(this).css("opacity", "0.5");
+				}					
+			}			
+
+			$(document).ready(function() { 
+				// Page 231 of Apress Book
+				/*$("img").mouseenter(imgHandleMouse);
+				$("img").mouseout(imgHandleMouse);*/
+
+				//$("img").hover(imgHandleMouse);
+			});
+		</script>
+	</head>
+	<body>
+		<h1>jQuery - Event Shorthand Methods</h1>
+
+		<img src="http://geeklearn.com/courses/HTML5/images/html5.png"/>
+		<img src="http://geeklearn.com/courses/HTML5/images/css3.png"/>
+	</body>
+</html>

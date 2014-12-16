@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery - Live Binding</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.js"></script>
+		<script>
+			function imgHandleMouse(e) {
+				if (event.type == "mouseout") {
+					$(this).css("opacity", "1");
+				}
+				else {
+					$(this).css("opacity", "0.5");
+				}					
+			}			
+
+			$(document).ready(function() { 
+				//$("img").on("mouseenter mouseout", imgHandleMouse);
+				
+				$("body").on("mouseenter mouseout", "img", imgHandleMouse);
+
+				$("body").prepend($("img:first").clone());
+			});
+		</script>
+	</head>
+	<body>
+		<h1>jQuery - Live Binding</h1>
+
+		<img src="http://geeklearn.com/courses/HTML5/images/html5.png"/>
+		<img src="http://geeklearn.com/courses/HTML5/images/css3.png"/>
+		<br><br><br>
+
+		<form action="http://www.google.com" method="get">
+			Name: <input type="text" id="name"><br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</body>
+</html>
